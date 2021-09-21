@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Vehicles JSON Generator</title>
+
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Vehicle JSON Generator</h1>
+        <section id="input" class="grow-section" aria-labelledby="input-header">
+            <header>
+                <h2 id="input-header"><label for="input-field">Input</label></h2>
+            </header>
+            <textarea id="input-field"></textarea>
+            <div class="button-group">
+                <button class="parse-input button">Parse input</button>
+                <button class="parse-input button" data-act="edit">Edit input</button>
+            </div>
+        </section>
+        <section id="vehicle" aria-labelledby="vehicle-header" hidden>
+            <header>
+                <h2 id="vehicle-header">Vehicles</h2>
+                <div>Current vehicle count: <input id="vehicle-count" type="number" value="0" readonly>.</div>
+                <div>
+                    <form id="generate-cards">
+                        <label>
+                            New vehicles:
+                            <input id="new-count" type="number">
+                        </label>
+                        <button>Generate Cards</button>
+                    </form>
+                </div>
+            </header>
+            <ul id="vehicle-list">
+            </ul>
+            <div class="button-group">
+                <button class="button generate-output" data-act="minify">Minify Output</button>
+                <button class="button generate-output">Generate Output</button>
+            </div>
+        </section>
+        <section id="output" class="grow-section" aria-labelledby="output-header" hidden>
+            <header>
+                <h2 id="output-header"><label for="output-field">Output</label></h2>
+            </header>
+            <textarea id="output-field"></textarea>
+        </section>
+        <aside id="templates" hidden>
+            <template id="template-vehicle-card">
+                <li>
+                    <h3></h3>
+                    <label>
+                        <span>Year</span>
+                        <input name="year" type="number" min="2000">
+                    </label>
+                    <label>
+                        <span>Image</span>
+                        <input name="image-src">
+                    </label>
+                    <label data-field="brand">
+                        <span>Brand</span>
+                    </label>
+                    <label data-field="size">
+                        <span>Type</span>
+                    </label>
+                    <fieldset>
+                        <legend>Name</legend>
+                        <label>
+                            <span>English</span>
+                            <input name="name-english">
+                        </label>
+                        <label>
+                            <span>French</span>
+                            <input name="name-french">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>MOV</legend>
+                        <label>
+                            <span>English</span>
+                            <input name="link-href-english">
+                        </label>
+                        <label>
+                            <span>French</span>
+                            <input name="link-href-french">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>BYO</legend>
+                        <label>
+                            <span>English</span>
+                            <input name="build-href-english">
+                        </label>
+                        <label>
+                            <span>French</span>
+                            <input name="build-href-french">
+                        </label>
+                    </fieldset>
+                </li>
+            </template>
+            <template id="template-brand-select">
+                <select name="brand">
+                    <option value="">Choose Brand</option>
+                </select>
+            </template>
+            <template id="template-size-select">
+                <select name="size">
+                    <option value="">Choose Type</option>
+                </select>
+            </template>
+        </aside>
+    </body>
+</html>
