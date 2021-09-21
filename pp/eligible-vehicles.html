@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Vehicles JSON Generator</title>
+        <title>Eligible Vehicles JSON Generator</title>
 
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="/static/styles/styles.min.css">
+        <script src="/static/scripts/pp-eligible-vehicles.min.js"></script>
     </head>
     <body>
-        <h1>Vehicle JSON Generator</h1>
+        <header id="site-head">
+            <a id="back-button" href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" viewBox="0 0 1024 1024"><circle cx="512" cy="512" r="480"/><path d="M563.2 715.947a33.997 33.997 0 0 1-24.132-10.001L368.4 535.279a34.133 34.133 0 0 1 0-48.265l170.667-170.666a34.133 34.133 0 1 1 48.264 48.264L440.815 511.147 587.332 657.68a34.133 34.133 0 0 1-24.132 58.266z"/></svg>
+                <span class="sr-only">Back to tools</span>
+            </a>
+            <h1>Eligible Vehicle JSON Generator</h1>
+        </header>
         <section id="input" class="grow-section" aria-labelledby="input-header">
             <header>
                 <h2 id="input-header"><label for="input-field">Input</label></h2>
@@ -22,18 +28,23 @@
         <section id="vehicle" aria-labelledby="vehicle-header" hidden>
             <header>
                 <h2 id="vehicle-header">Vehicles</h2>
-                <div>Current vehicle count: <input id="vehicle-count" type="number" value="0" readonly>.</div>
                 <div>
-                    <form id="generate-cards">
+                    <label>
+                        Current vehicle count:
+                        <input id="vehicle-count" type="number" value="0" readonly>
+                    </label>
+                </div>
+                <div>
+                    <form id="generate-cards" class="input-group">
                         <label>
                             New vehicles:
-                            <input id="new-count" type="number">
+                            <input id="new-count" type="number" placeholder="1">
                         </label>
                         <button>Generate Cards</button>
                     </form>
                 </div>
             </header>
-            <ul id="vehicle-list">
+            <ul id="vehicle-list" class="card-list">
             </ul>
             <div class="button-group">
                 <button class="button generate-output" data-act="minify">Minify Output</button>
